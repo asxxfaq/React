@@ -1,10 +1,15 @@
+import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Basic from './FunctionalComponents/Basic'
-import Home from './FunctionalComponents/Hooks/UseContext/Theme/Home'
-import { ThemeProvider } from './FunctionalComponents/Hooks/UseContext/Theme/ThemeContext'
-import { UserAPIProvider } from './FunctionalComponents/Hooks/UseContext/UserList/UserAPIContext'
-import UserList from './FunctionalComponents/Hooks/UseContext/UserList/UserList'
-import UseEff from './FunctionalComponents/Hooks/useEffect/UseEff'
+import Products from '../Dynamic-Routing/Products'
+import Productdetails from '../Dynamic-Routing/Productdetails'
+// import Basic from './FunctionalComponents/Basic'
+// // import Home from './FunctionalComponents/Hooks/UseContext/Theme/Home'
+// import { ThemeProvider } from './FunctionalComponents/Hooks/UseContext/Theme/ThemeContext'
+// import { UserAPIProvider } from './FunctionalComponents/Hooks/UseContext/UserList/UserAPIContext'
+// import UserList from './FunctionalComponents/Hooks/UseContext/UserList/UserList'
+// import UseEff from './FunctionalComponents/Hooks/useEffect/UseEff'
+// import Home from './ReactRouterDom/Home'
+// import About from './ReactRouterDom/About'
 // import UserList from './FunctionalComponents/Hooks/useEffect/UserList'
 // import Counter from './FunctionalComponents/Hooks/useState/Counter'
 // import Props from './FunctionalComponents/Props'
@@ -40,10 +45,32 @@ function App() {
     {/* <ThemeProvider>
       <Home/>
     </ThemeProvider> */}
-    <UserAPIProvider>
+    {/* <UserAPIProvider>
       <UserList/>
-    </UserAPIProvider>
+    </UserAPIProvider> */}
 
+
+      {/* ---------------1.Basic Router DOM---------------- */}
+
+      <div>
+        {/* <nav>
+          
+        <Link to='/'>Home |</Link>
+        <Link to='/about'> About</Link>
+        </nav>
+        <Routes>
+          <Route path='/' element={<Home/>}  />
+          <Route path='/about' element={<About/>} />
+        </Routes> */}
+
+{/* <----------Dynamic Routing---------> */}
+<Routes>
+  <Route path='/' element={<Products/>}/>
+  <Route path='/products/:id' element={<Productdetails/>}></Route>
+</Routes>
+
+
+      </div>
     </>
 
   )
