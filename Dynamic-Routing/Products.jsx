@@ -7,9 +7,7 @@ const Products = () => {
         
             {id:'1',name:"Laptop"},
             {id:'2', name:"Phone"},
-            {id:'3', name:"Watch"}
-            
-        
+            {id:'3', name:"Watch"},        
     ]
 
   return (
