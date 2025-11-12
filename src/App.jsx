@@ -1,7 +1,14 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Products from '../Dynamic-Routing/Products'
-import Productdetails from '../Dynamic-Routing/Productdetails'
+import Products from './Dynamic-Routing/Products'
+import Productdetails from './Dynamic-Routing/Productdetails'
+import Home from './Nested-Routing/Pages/Home'
+import Navbar from './Nested-Routing/Navbar'
+import About from './Nested-Routing/Pages/About'
+import Services from './Nested-Routing/Pages/Services'
+import ContactUs from './Nested-Routing/Pages/ContactUs'
+import Webdev from './Nested-Routing/Pages/Services/Webdev'
+import AppDev from './Nested-Routing/Pages/Services/AppDev'
 // import Basic from './FunctionalComponents/Basic'
 // // import Home from './FunctionalComponents/Hooks/UseContext/Theme/Home'
 // import { ThemeProvider } from './FunctionalComponents/Hooks/UseContext/Theme/ThemeContext'
@@ -36,16 +43,16 @@ function App() {
       {/* <State/> */}
       {/* <Props/> */}
       {/* <Counter/> */}
-     {/* <UseEff/> */}
-     {/* <UserList/> */}
+      {/* <UseEff/> */}
+      {/* <UserList/> */}
 
-    {/* ------------------Use Context----------------- */}
+      {/* ------------------Use Context----------------- */}
 
-    {/* 1.Theme  */}
-    {/* <ThemeProvider>
+      {/* 1.Theme  */}
+      {/* <ThemeProvider>
       <Home/>
     </ThemeProvider> */}
-    {/* <UserAPIProvider>
+      {/* <UserAPIProvider>
       <UserList/>
     </UserAPIProvider> */}
 
@@ -63,13 +70,28 @@ function App() {
           <Route path='/about' element={<About/>} />
         </Routes> */}
 
-{/* <----------Dynamic Routing---------> */}
-<Routes>
+        {/* 2.<----------Dynamic Routing---------> */}
+        {/* <Routes>
   <Route path='/' element={<Products/>}/>
   <Route path='/products/:id' element={<Productdetails/>}></Route>
 </Routes>
 
 
+      */}
+
+        {/* 3.Nested Routing  */}
+
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+
+          <Route path='/services' element={<Services/>}>
+          <Route path='web-dev' element={<Webdev/>}/>
+          <Route path='app-dev' element={<AppDev/>}/>
+          </Route>
+          <Route path='/contactus' element={<ContactUs/>}/>
+        </Routes>
       </div>
     </>
 
