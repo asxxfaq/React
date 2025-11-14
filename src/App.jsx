@@ -1,14 +1,17 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Products from './Dynamic-Routing/Products'
-import Productdetails from './Dynamic-Routing/Productdetails'
-import Home from './Nested-Routing/Pages/Home'
-import Navbar from './Nested-Routing/Navbar'
-import About from './Nested-Routing/Pages/About'
-import Services from './Nested-Routing/Pages/Services'
-import ContactUs from './Nested-Routing/Pages/ContactUs'
-import Webdev from './Nested-Routing/Pages/Services/Webdev'
-import AppDev from './Nested-Routing/Pages/Services/AppDev'
+// import Products from './Dynamic-Routing/Products'
+// import Productdetails from './Dynamic-Routing/Productdetails'
+// import Home from './Nested-Routing/Pages/Home'
+// import Navbar from './Nested-Routing/Navbar'
+// import About from './Nested-Routing/Pages/About'
+// import Services from './Nested-Routing/Pages/Services'
+// import ContactUs from './Nested-Routing/Pages/ContactUs'
+// import Webdev from './Nested-Routing/Pages/Services/Webdev'
+// import AppDev from './Nested-Routing/Pages/Services/AppDev'
+// import Person from './embeding-expression/Person'
+// import Items from './React-Keys/Items'
+import AllProducts from './React-Keys/AllProducts'
 // import Basic from './FunctionalComponents/Basic'
 // // import Home from './FunctionalComponents/Hooks/UseContext/Theme/Home'
 // import { ThemeProvider } from './FunctionalComponents/Hooks/UseContext/Theme/ThemeContext'
@@ -36,6 +39,12 @@ function App() {
       <CallingFunction />
       <Conditional />
       <Basic /> */}
+      {/* <Person /> */}
+
+
+      {/* <-------React keys------------> */}
+      {/* <Items/> */}
+      <AllProducts/>
 
 
       {/* // <----------Functional components --------> */}
@@ -81,7 +90,7 @@ function App() {
 
         {/* 3.Nested Routing  */}
 
-        <Navbar />
+        {/* <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
@@ -91,7 +100,7 @@ function App() {
           <Route path='app-dev' element={<AppDev/>}/>
           </Route>
           <Route path='/contactus' element={<ContactUs/>}/>
-        </Routes>
+        </Routes> */}
       </div>
     </>
 
