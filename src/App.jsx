@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
+import SimpleForm from '../form/SimpleForm'
 // import Products from './Dynamic-Routing/Products'
 // import Productdetails from './Dynamic-Routing/Productdetails'
 // import Home from './Nested-Routing/Pages/Home'
@@ -11,7 +12,7 @@ import './App.css'
 // import AppDev from './Nested-Routing/Pages/Services/AppDev'
 // import Person from './embeding-expression/Person'
 // import Items from './React-Keys/Items'
-import AllProducts from './React-Keys/AllProducts'
+// import AllProducts from './React-Keys/AllProducts'
 // import Basic from './FunctionalComponents/Basic'
 // // import Home from './FunctionalComponents/Hooks/UseContext/Theme/Home'
 // import { ThemeProvider } from './FunctionalComponents/Hooks/UseContext/Theme/ThemeContext'
@@ -44,7 +45,10 @@ function App() {
 
       {/* <-------React keys------------> */}
       {/* <Items/> */}
-      <AllProducts/>
+      {/* <AllProducts/> */}
+
+      {/* <-----------Form Validation-----------> */}
+      <SimpleForm/>
 
 
       {/* // <----------Functional components --------> */}
