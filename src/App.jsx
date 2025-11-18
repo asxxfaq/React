@@ -1,6 +1,7 @@
-import { Link, Route, Routes } from 'react-router-dom'
+import {  Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import SimpleForm from '../form/SimpleForm'
+import Form from '../form/Form'
 // import Products from './Dynamic-Routing/Products'
 // import Productdetails from './Dynamic-Routing/Productdetails'
 // import Home from './Nested-Routing/Pages/Home'
@@ -48,7 +49,8 @@ function App() {
       {/* <AllProducts/> */}
 
       {/* <-----------Form Validation-----------> */}
-      <SimpleForm/>
+      {/* <SimpleForm/> */}
+      <Form/>
 
 
       {/* // <----------Functional components --------> */}
