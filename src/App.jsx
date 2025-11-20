@@ -50,7 +50,13 @@ function App() {
 
       {/* <-----------Form Validation-----------> */}
       {/* <SimpleForm/> */}
-      <Form/>
+      {/* <Form/> */}
+
+
+
+        {/*------------------------------ Local Storage ----------------------------- */}
+
+
 
 
       {/* // <----------Functional components --------> */}
