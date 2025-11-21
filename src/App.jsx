@@ -2,6 +2,7 @@ import {  Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import SimpleForm from '../form/SimpleForm'
 import Form from '../form/Form'
+import Crud from './LocalStorage/Crud'
 // import Products from './Dynamic-Routing/Products'
 // import Productdetails from './Dynamic-Routing/Productdetails'
 // import Home from './Nested-Routing/Pages/Home'
@@ -51,7 +52,7 @@ function App() {
       {/* <-----------Form Validation-----------> */}
       {/* <SimpleForm/> */}
       {/* <Form/> */}
-
+        <Crud/>
 
 
         {/*------------------------------ Local Storage ----------------------------- */}
