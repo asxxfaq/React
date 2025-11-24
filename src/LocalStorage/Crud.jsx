@@ -90,6 +90,30 @@ const Crud = () => {
         });
         setErrors({});
     }
+    const handleEdit = (users) => {
+        setFormData(users);
+        setEditMode(true);
+    }
+    const handleCancel = () => {
+        setFormData({ id: '', name: '', email: '', age: '' });
+        setErrors({})
+        setEditMode(false);
+    }
+    const handleClearAll = () => {
+        if (window.confirm('Are you sure want to clear all data ? This action cannot be undone')) {
+            setUsers([]);
+            localStorage.removeItem("users");
+            if (editMode) {
+                setFormData({ id: '', name: '', email: '', age: '' });
+                setErrors({})
+                setEditMode(false);
+            }
+        }
+    }
+    const handleDelete = (id) => {
+        setUsers(users.filter(users => users.id !== id))
+
+    }
 
     return (
         <div className="form">
@@ -129,6 +153,7 @@ const Crud = () => {
                 {
                     editMode && (
                         <button
+                            onClick={handleCancel}
                             type='button'
                             style={{ marginLeft: '10px' }}
                         >Cancel</button>
@@ -140,15 +165,17 @@ const Crud = () => {
             }}>
                 <h2>User List</h2>
                 {users.length > 0 && (
-                    <button style={{
-                        backgroundColor: 'red',
-                        color: 'white',
-                        border: 'none',
-                        padding: '8px 12px',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                        marginLeft: '30px'
-                    }}> Clear All Data </button>
+                    <button
+                        onClick={handleClearAll}
+                        style={{
+                            backgroundColor: 'red',
+                            color: 'white',
+                            border: 'none',
+                            padding: '8px 12px',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                            marginLeft: '30px'
+                        }}> Clear All Data </button>
                 )}
             </div>
 
@@ -164,14 +191,14 @@ const Crud = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {users.map(users => ( 
+                        {users.map(users => (
                             <tr key={users.id}>
                                 <td>{users.name}</td>
                                 <td>{users.email}</td>
                                 <td>{users.age}</td>
                                 <td>
-                                    <button>Edit</button>
-                                    <button style={{marginLeft:'10px'}}>Delete</button>
+                                    <button onClick={() => handleEdit(users)}>Edit</button>
+                                    <button onClick={() => handleDelete(users.id)} style={{ marginLeft: '10px' }}>Delete</button>
                                 </td>
                             </tr>
                         ))}
