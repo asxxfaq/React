@@ -11,25 +11,25 @@ const Crud = () => {
 
     })
     const [users, setUsers] = useState([]);
-    const [editMode, setEditMode] = useState(true);
+    const [editMode, setEditMode] = useState(false);
     const [errors, setErrors] = useState({});
     const [isLoaded, setIsLoaded] = useState(false);
 
-    useEffect(() =>{
+    useEffect(() => {
         const stored = localStorage.getItem("users");
-        if(stored){
+        if (stored) {
             try {
-                const parsedUser =JSON.parse(stored);
+                const parsedUser = JSON.parse(stored);
                 setUsers(parsedUser)
             } catch (error) {
-                console.log('Error parsing Data',error);
+                console.log('Error parsing Data', error);
                 localStorage.removeItem("users") //clear corrupted data
-                
+
             }
         }
         setIsLoaded(true);
 
-    },[]);
+    }, []);
 
     //save user to LocalStorage (Whenever user changes only after initial load)
     useEffect(() => {
@@ -79,14 +79,14 @@ const Crud = () => {
             setUsers(users.map(user => user.id === formData.id ? formData : user))
             setEditMode(false);
         } else {
-            const newUser = {...formData , id:Date.now().toString()}
-            setUsers([...users,newUser])
+            const newUser = { ...formData, id: Date.now().toString() }
+            setUsers([...users, newUser])
         }
         setFormData({
-            id:'',
-            name:'',
-            email:'',
-            age:''
+            id: '',
+            name: '',
+            email: '',
+            age: ''
         });
         setErrors({});
     }
@@ -134,8 +134,54 @@ const Crud = () => {
                         >Cancel</button>
                     )}
             </form>
-        </div>
+            {/* //-----------Clear Button-------------// */}
+            <div style={{
+                display: 'flex', justifyContent: 'center', alignItems: "center", marginBottom: "10px"
+            }}>
+                <h2>User List</h2>
+                {users.length > 0 && (
+                    <button style={{
+                        backgroundColor: 'red',
+                        color: 'white',
+                        border: 'none',
+                        padding: '8px 12px',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        marginLeft: '30px'
+                    }}> Clear All Data </button>
+                )}
+            </div>
 
+            {/* //---------------------Table Design------------------// */}
+            {users.length > 0 ? (
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Age</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map(users => ( 
+                            <tr key={users.id}>
+                                <td>{users.name}</td>
+                                <td>{users.email}</td>
+                                <td>{users.age}</td>
+                                <td>
+                                    <button>Edit</button>
+                                    <button style={{marginLeft:'10px'}}>Delete</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            ) : (
+                <p> No Users Added</p>
+            )
+            }
+        </div >
     )
 
 }
