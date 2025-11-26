@@ -2,6 +2,7 @@ import {  Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import AxiosGet from './Axios/AxiosGet'
 import ContactForm from './LocalStorage/ContactForm'
+import AxiosPost from './Axios/AxiosPost'
 // import SimpleForm from '../form/SimpleForm'
 // import Form from '../form/Form'
 // import Crud from './LocalStorage/Crud'
@@ -59,7 +60,7 @@ function App() {
 
         {/*------------------------------ Local Storage ----------------------------- */}
  {/* <Crud/> */}
- <ContactForm/>
+ {/* <ContactForm/> */}
 
 
 
@@ -84,6 +85,7 @@ function App() {
 
 {/* ------------------------Axios----------------------------- */}
 {/* <AxiosGet/> */}
+<AxiosPost/>
 
 
 
