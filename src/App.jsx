@@ -3,6 +3,7 @@ import './App.css'
 import AxiosGet from './Axios/AxiosGet'
 import ContactForm from './LocalStorage/ContactForm'
 import AxiosPost from './Axios/AxiosPost'
+import ToDo from './LocalStorage/ToDo'
 // import SimpleForm from '../form/SimpleForm'
 // import Form from '../form/Form'
 // import Crud from './LocalStorage/Crud'
@@ -85,9 +86,12 @@ function App() {
 
 {/* ------------------------Axios----------------------------- */}
 {/* <AxiosGet/> */}
-<AxiosPost/>
+{/* <AxiosPost/> */}
 
 
+
+{/* <-----------------------To Do--------------> */}
+<ToDo/>
 
       {/* ---------------1.Basic Router DOM---------------- */}
 
