@@ -4,6 +4,9 @@ import AxiosGet from './Axios/AxiosGet'
 import ContactForm from './LocalStorage/ContactForm'
 import AxiosPost from './Axios/AxiosPost'
 import ToDo from './LocalStorage/ToDo'
+import AxiosPut from './Axios/AxiosPut'
+import AxiosDelete from './Axios/AxiosDelete'
+import BasicHookForm from './form/HookForm/BasicHookForm'
 // import SimpleForm from '../form/SimpleForm'
 // import Form from '../form/Form'
 // import Crud from './LocalStorage/Crud'
@@ -56,6 +59,7 @@ function App() {
       {/* <-----------Form Validation-----------> */}
       {/* <SimpleForm/> */}
       {/* <Form/> */}
+      <BasicHookForm/>
        
 
 
@@ -87,11 +91,13 @@ function App() {
 {/* ------------------------Axios----------------------------- */}
 {/* <AxiosGet/> */}
 {/* <AxiosPost/> */}
+{/* <AxiosPut/> */}
+{/* <AxiosDelete/> */}
 
 
 
 {/* <-----------------------To Do--------------> */}
-<ToDo/>
+{/* <ToDo/> */}
 
       {/* ---------------1.Basic Router DOM---------------- */}
 
